@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="main"
+            type="com.lingtu.study.activity.MainActivity" />
+
+        <variable
+            name="handler"
+            type="com.lingtu.study.MainHandler" />
+        <variable
+            name="user"
+            type="com.lingtu.study.entity.User" />
+        <variable
+            name="User2"
+            type="com.lingtu.study.entity.User2" />
+        <variable
+            name="adapter"
+            type="com.lingtu.study.adapter.UserAdapter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{main::onClick}"
+            android:text="@{User2.firstName}"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{User2.lastName}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(User2.age)}" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="@{handler::onClick}" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:adapter="@{adapter}"
+            android:layout_height="match_parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+</layout>
