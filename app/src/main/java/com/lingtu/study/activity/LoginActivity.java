@@ -3,6 +3,7 @@ package com.lingtu.study.activity;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -19,6 +20,9 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
 
     @BindView(R.id.btn)
     Button btn;
+    @BindView(R.id.tv)
+    TextView mTextView;
+
 
     @Override
     protected void initData(@Nullable Bundle savedInstanceState) {
@@ -37,7 +41,7 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
 
     @Override
     public void getDataResult(String data) {
-        Toast.makeText(this, data, Toast.LENGTH_SHORT).show();
+        mTextView.setText(data);
     }
 
     @Override
